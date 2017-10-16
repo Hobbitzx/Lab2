@@ -1,5 +1,5 @@
 package SaaS;
-
+//Git on myeclipse
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +12,7 @@ import java.sql.Connection;
 public class DBConnection  
 {  
     private String dbDriver="com.mysql.jdbc.Driver";   
-    private String dbUrl="jdbc:mysql://localhost:3306/app_hobbitzx?characterEncoding=utf8";//¸ù¾ÝÊµ¼ÊÇé¿ö±ä»¯  
+    private String dbUrl="jdbc:mysql://localhost:3306/app_hobbitzx?characterEncoding=utf8";//ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ä»¯  
     private String dbUser="root";  
     private String dbPass="123456";  
     public Connection getConn()  
@@ -28,7 +28,7 @@ public class DBConnection
         }  
         try  
         {  
-            conn = DriverManager.getConnection(dbUrl,dbUser,dbPass);//×¢ÒâÊÇÈý¸ö²ÎÊý  
+            conn = DriverManager.getConnection(dbUrl,dbUser,dbPass);//×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
         }  
         catch (SQLException e)  
         {  
@@ -53,12 +53,12 @@ public int insert(String sql)
     {  
         e.printStackTrace();  
     }  
-    return i;//·µ»ØÓ°ÏìµÄÐÐÊý£¬1ÎªÖ´ÐÐ³É¹¦  
+    return i;//ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ÎªÖ´ï¿½Ð³É¹ï¿½  
 }  
 public int update(String sql)
 {  
     int i=0;  
-    /*String sql="update author set  authorid=?,name=?,age=?,country=? where authorid=?";//×¢ÒâÒªÓÐwhereÌõ¼þ  
+    /*String sql="update author set  authorid=?,name=?,age=?,country=? where authorid=?";//×¢ï¿½ï¿½Òªï¿½ï¿½whereï¿½ï¿½ï¿½ï¿½  
     */
     Connection cnn=getConn();  
 
@@ -71,12 +71,12 @@ public int update(String sql)
     {  
         e.printStackTrace();  
     }  
-    return i;//·µ»ØÓ°ÏìµÄÐÐÊý£¬1ÎªÖ´ÐÐ³É¹¦  
+    return i;//ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ÎªÖ´ï¿½Ð³É¹ï¿½  
 }  
 public List<String> select(String sql)
 {  
     int i;
-    Connection cnn = getConn();//´Ë´¦ÎªÍ¨¹ý×Ô¼ºÐ´µÄ·½·¨getConn()»ñµÃÁ¬½Ó
+    Connection cnn = getConn();//ï¿½Ë´ï¿½ÎªÍ¨ï¿½ï¿½ï¿½Ô¼ï¿½Ð´ï¿½Ä·ï¿½ï¿½ï¿½getConn()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     List<String> list = new LinkedList<String>();
     try  
     {  
@@ -87,7 +87,7 @@ public List<String> select(String sql)
             for(i = 1;i<=rs.getMetaData().getColumnCount();i++){
             list.add(rs.getString(i));}
         }  
-        //¿ÉÒÔ½«²éÕÒµ½µÄÖµÐ´ÈëÀà£¬È»ºó·µ»ØÏàÓ¦µÄ¶ÔÏó  
+        //ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ÖµÐ´ï¿½ï¿½ï¿½à£¬È»ï¿½ó·µ»ï¿½ï¿½ï¿½Ó¦ï¿½Ä¶ï¿½ï¿½ï¿½  
     }  
     catch (SQLException e)  
     {  
@@ -99,7 +99,7 @@ public int delete(String sql)
 {  
     /*String sql = "delete from author where authorid=?"; */ 
     int i=0;  
-    Connection conn = getConn();//´Ë´¦ÎªÍ¨¹ý×Ô¼ºÐ´µÄ·½·¨getConn()»ñµÃÁ¬½Ó  
+    Connection conn = getConn();//ï¿½Ë´ï¿½ÎªÍ¨ï¿½ï¿½ï¿½Ô¼ï¿½Ð´ï¿½Ä·ï¿½ï¿½ï¿½getConn()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
     try  
     {  
         Statement stmt = conn.createStatement();  
@@ -109,6 +109,6 @@ public int delete(String sql)
     {  
         e.printStackTrace();  
     }  
-    return i;//Èç¹û·µ»ØµÄÊÇ1£¬ÔòÖ´ÐÐ³É¹¦;  
+    return i;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ð³É¹ï¿½;  
 }  
 }
